@@ -2,11 +2,11 @@ const note = require('express').Router;
 
 const {v4: uuidv4} = require('uuid');
 
-const {readAndAppend, readFromFile} = require('../utils/utils');
+const {readAndAppend, readFromFile, writeToFile} = require('../utils/utils');
 
-note.get('/notes', (req, res) => 
-readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
-);
+note.get('/notes', (req, res) => {
+    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
+});
 
 note.post('/notes', (req, res) => {
     console.log(req.body);
