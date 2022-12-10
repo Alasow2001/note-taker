@@ -1,6 +1,6 @@
 const express = require('express');
 
-const apiRoute = require('./routes/noteRoutes');
+const apiRoute = require('./routes/apiRoutes');
 
 const app = express();
 
@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended : true}));
 app.use(express.static('public'));
 app.use('/api', apiRoute);
 
-app.get('/', (req, res) =>
+app.get('*', (req, res) =>
     res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 
