@@ -1,5 +1,7 @@
 const express = require('express');
 
+const apiRoute = require('./routes/noteRoutes');
+
 const app = express();
 
 const path = require('path');
