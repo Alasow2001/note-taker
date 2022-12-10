@@ -1,8 +1,8 @@
-const note = require('express').Router;
+const note = require('express').Router();
 
 const {v4: uuidv4} = require('uuid');
 
-const {readAndAppend, readFromFile, writeToFile} = require('../utils/utils');
+const {readAndAppend, readFromFile, writeToFile} = require('../utils/fsUtils');
 
 note.get('/notes', (req, res) => {
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
