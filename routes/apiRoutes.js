@@ -6,6 +6,7 @@ const {v4: uuidv4} = require('uuid');
 // Obtains the variables required to read, write and append the notes
 const {readAndAppend, readFromFile, writeToFile} = require('../utils/fsUtils');
 
+// Performs a GET request to obtain information from the notes html file
 note.get('/notes', (req, res) => {
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
 });
